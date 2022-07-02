@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Welcome{% endblock %}
+{% block content %}
     <h1>Welcome to the Meeting Planner</h1>
     <p>
         This is demo meeting Planner.
         <em>Django: Meeting Planner</em>
     </p>
+    <img src="{% static 'website/calender.png' %}" alt="calender" width="100px">
     <h2>Meetings</h2>
     <ul>
         {% for meeting in meetings %}
@@ -24,5 +20,4 @@
         {% endfor %}
     </ul>
     <a href="{% url 'rooms' %}"> Room List</a>
-</body>
-</html>
+{% endblock %}

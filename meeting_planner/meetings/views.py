@@ -10,3 +10,6 @@ def detail(request, id):
 def rooms(request):
     rooms = Room.objects.all()
     return render(request, "meetings/rooms.html", {"rooms": rooms})
+
+def new(request):
+    return render(request, "meetings/new.html")
